@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BiteBox | Campus Food Delivery — Fast, Fresh & Affordable</title>
+  <meta name="description" content="BiteBox is the ultimate campus meal delivery app. Order burgers, shawarma, giant rolex, boba, and late night study snacks directly to your hostel with UGX 0 delivery fee." />
+  <meta name="theme-color" content="#FF6B00" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- BiteBox Design System -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <!-- Official BiteBox Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-dark.png" />
+</head>
+<body>
+
+  <!-- Navigation Shell -->
+  <div id="navbarContainer"></div>
+
+  <!-- Main Dynamic Application Container -->
+  <main class="bb-main-content">
+    <div class="bb-container" id="mainAppContainer">
+      <!-- Views injected here by js/app.js -->
+    </div>
+  </main>
+
+  <!-- Slide-out Cart Drawer Overlay -->
+  <div id="cartDrawerOverlay" class="bb-cart-drawer-overlay"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="bb-toast-container"></div>
+
+  <!-- Application Logic -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

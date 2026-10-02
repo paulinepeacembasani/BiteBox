@@ -1,0 +1,657 @@
+/**
+ * BiteBox UI Components
+ * Borderless Cards, Sleek Category Bubbles, Seamless Inputs & Modals
+ */
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.bb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: var(--bb-radius-full);
+  transition: all var(--bb-transition-fast);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  border: none;
+}
+
+.bb-btn-primary {
+  background: var(--bb-accent-gradient);
+  color: #090A0E;
+  box-shadow: 0 4px 16px var(--bb-orange-glow);
+}
+
+.bb-btn-primary:hover {
+  background: var(--bb-accent-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px var(--bb-orange-glow);
+}
+
+.bb-btn-primary:active {
+  transform: translateY(0);
+}
+
+.bb-btn-yellow {
+  background: var(--bb-yellow-primary);
+  color: #090A0E;
+  box-shadow: 0 4px 14px var(--bb-yellow-glow);
+}
+
+.bb-btn-yellow:hover {
+  background: var(--bb-yellow-hover);
+  transform: translateY(-2px);
+}
+
+.bb-btn-secondary {
+  background: var(--bb-bg-surface);
+  color: var(--bb-text-primary);
+  box-shadow: var(--bb-shadow-sm);
+}
+
+.bb-btn-secondary:hover {
+  background: var(--bb-bg-card-hover);
+  color: var(--bb-yellow-primary);
+  transform: translateY(-1px);
+}
+
+.bb-btn-ghost {
+  background: transparent;
+  color: var(--bb-text-secondary);
+}
+
+.bb-btn-ghost:hover {
+  color: var(--bb-text-primary);
+  background: var(--bb-bg-surface);
+}
+
+.bb-btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+}
+
+.bb-btn-lg {
+  padding: 0.95rem 1.85rem;
+  font-size: 1.02rem;
+}
+
+.bb-btn-block {
+  width: 100%;
+}
+
+.bb-btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--bb-radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bb-bg-surface);
+  color: var(--bb-text-secondary);
+  box-shadow: var(--bb-shadow-sm);
+  transition: all var(--bb-transition-fast);
+}
+
+.bb-btn-icon:hover {
+  color: var(--bb-yellow-primary);
+  background: var(--bb-bg-card-hover);
+}
+
+/* ==========================================================================
+   FORM INPUTS & SELECTS (BORDERLESS)
+   ========================================================================== */
+
+.bb-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.bb-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--bb-text-secondary);
+}
+
+.bb-input, .bb-select, .bb-textarea {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background: var(--bb-bg-input);
+  border-radius: var(--bb-radius-md);
+  color: var(--bb-text-primary);
+  font-size: 0.95rem;
+  border: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  transition: box-shadow var(--bb-transition-fast), background var(--bb-transition-fast);
+}
+
+.bb-input:focus, .bb-select:focus, .bb-textarea:focus {
+  box-shadow: 0 0 0 2.5px var(--bb-yellow-primary);
+}
+
+.bb-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   CATEGORY CIRCULAR BUBBLES (CLEAN & BORDERLESS)
+   ========================================================================== */
+
+.bb-category-scroll {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.25rem 1.25rem 0.25rem;
+  scrollbar-width: none;
+}
+
+.bb-category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.bb-category-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 84px;
+  cursor: pointer;
+  transition: transform var(--bb-transition-fast);
+}
+
+.bb-category-bubble:hover {
+  transform: translateY(-4px);
+}
+
+.bb-bubble-circle {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--bb-bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--bb-transition-normal);
+  box-shadow: var(--bb-shadow-sm);
+  color: var(--bb-text-secondary);
+}
+
+.bb-category-bubble:hover .bb-bubble-circle {
+  background: var(--bb-bg-card-hover);
+  color: var(--bb-yellow-primary);
+  box-shadow: var(--bb-shadow-md);
+}
+
+.bb-category-bubble.active .bb-bubble-circle {
+  background: var(--bb-accent-gradient);
+  color: #090A0E;
+  box-shadow: 0 8px 22px var(--bb-orange-glow);
+  transform: scale(1.08);
+}
+
+.bb-bubble-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--bb-text-secondary);
+  transition: color var(--bb-transition-fast);
+  white-space: nowrap;
+}
+
+.bb-category-bubble:hover .bb-bubble-name,
+.bb-category-bubble.active .bb-bubble-name {
+  color: var(--bb-text-primary);
+}
+
+/* ==========================================================================
+   RESTAURANT CARDS (BORDERLESS)
+   ========================================================================== */
+
+.bb-restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.bb-restaurant-card {
+  background: var(--bb-bg-card);
+  border-radius: var(--bb-radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--bb-transition-normal);
+  cursor: pointer;
+  position: relative;
+  box-shadow: var(--bb-shadow-sm);
+  border: none;
+}
+
+.bb-restaurant-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--bb-shadow-hover);
+  background: var(--bb-bg-card-hover);
+}
+
+.bb-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1C1E28 0%, #12141C 100%);
+  border-radius: var(--bb-radius-lg) var(--bb-radius-lg) 0 0;
+}
+
+[data-theme="light"] .bb-card-image-wrap {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFF9F0 100%);
+}
+
+.bb-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--bb-transition-smooth);
+}
+
+.bb-restaurant-card:hover .bb-card-image-wrap img {
+  transform: scale(1.05);
+}
+
+.bb-card-badge-top-left {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 5;
+}
+
+.bb-card-time-pill {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(9, 10, 14, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--bb-radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--bb-yellow-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  z-index: 5;
+}
+
+[data-theme="light"] .bb-card-time-pill {
+  background: rgba(255, 255, 255, 0.94);
+  color: #0C0E14;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.bb-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.6rem;
+}
+
+.bb-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bb-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bb-text-primary);
+}
+
+.bb-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--bb-yellow-subtle);
+  color: var(--bb-yellow-primary);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--bb-radius-sm);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.bb-card-tagline {
+  font-size: 0.85rem;
+  color: var(--bb-text-secondary);
+  line-height: 1.4;
+}
+
+.bb-card-footer {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--bb-text-muted);
+}
+
+.bb-card-distance {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--bb-text-secondary);
+}
+
+.bb-card-free-delivery {
+  color: var(--bb-status-success);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ==========================================================================
+   FOOD ITEM CARDS (BORDERLESS)
+   ========================================================================== */
+
+.bb-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.bb-menu-card {
+  background: var(--bb-bg-card);
+  border-radius: var(--bb-radius-md);
+  padding: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all var(--bb-transition-fast);
+  cursor: pointer;
+  position: relative;
+  box-shadow: var(--bb-shadow-sm);
+  border: none;
+}
+
+.bb-menu-card:hover {
+  background: var(--bb-bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--bb-shadow-md);
+}
+
+.bb-menu-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 0.4rem;
+}
+
+.bb-menu-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bb-text-primary);
+}
+
+.bb-menu-desc {
+  font-size: 0.82rem;
+  color: var(--bb-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.bb-menu-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.bb-menu-price {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--bb-text-yellow);
+}
+
+.bb-menu-time {
+  font-size: 0.75rem;
+  color: var(--bb-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bb-menu-thumb {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  min-width: 95px;
+  border-radius: var(--bb-radius-md);
+  overflow: hidden;
+}
+
+.bb-menu-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bb-menu-add-btn {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bb-accent-gradient);
+  color: #090A0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform var(--bb-transition-fast);
+  border: none;
+}
+
+.bb-menu-add-btn:hover {
+  transform: scale(1.15);
+}
+
+/* ==========================================================================
+   MODAL & BACKDROP (BORDERLESS)
+   ========================================================================== */
+
+.bb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 7, 10, 0.78);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--bb-transition-normal);
+}
+
+.bb-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bb-modal-container {
+  background: var(--bb-bg-modal);
+  border-radius: var(--bb-radius-lg);
+  max-width: 540px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--bb-shadow-lg);
+  position: relative;
+  transform: scale(0.96) translateY(10px);
+  transition: all var(--bb-transition-normal);
+  border: none;
+}
+
+.bb-modal-overlay.active .bb-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.bb-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(14, 16, 22, 0.7);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 10;
+  border: none;
+  transition: all var(--bb-transition-fast);
+}
+
+.bb-modal-close:hover {
+  background: var(--bb-orange-primary);
+  color: #FFFFFF;
+}
+
+/* Custom options item (borderless) */
+.bb-option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--bb-radius-md);
+  background: var(--bb-bg-surface);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all var(--bb-transition-fast);
+  border: none;
+}
+
+.bb-option-item:hover {
+  background: var(--bb-bg-card-hover);
+}
+
+.bb-option-item.selected {
+  background: var(--bb-yellow-subtle);
+}
+
+.bb-option-radio, .bb-option-checkbox {
+  accent-color: var(--bb-orange-primary);
+  width: 18px;
+  height: 18px;
+}
+
+/* ==========================================================================
+   QUANTITY STEPPER
+   ========================================================================== */
+
+.bb-stepper {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bb-bg-input);
+  border-radius: var(--bb-radius-full);
+  padding: 0.2rem;
+  border: none;
+}
+
+.bb-stepper-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bb-bg-surface);
+  color: var(--bb-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all var(--bb-transition-fast);
+  border: none;
+}
+
+.bb-stepper-btn:hover {
+  background: var(--bb-yellow-primary);
+  color: #090A0E;
+}
+
+.bb-stepper-value {
+  padding: 0 0.8rem;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--bb-text-primary);
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATIONS (BORDERLESS)
+   ========================================================================== */
+
+.bb-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 380px;
+  width: calc(100% - 48px);
+  pointer-events: none;
+}
+
+.bb-toast {
+  pointer-events: auto;
+  background: var(--bb-bg-card);
+  border-radius: var(--bb-radius-md);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--bb-shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  color: var(--bb-text-primary);
+  font-size: 0.88rem;
+  border: none;
+}
+
+.bb-toast-close {
+  color: var(--bb-text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.bb-toast-close:hover {
+  color: var(--bb-text-primary);
+}

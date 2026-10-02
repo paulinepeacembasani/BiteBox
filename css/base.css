@@ -1,0 +1,171 @@
+/**
+ * BiteBox Base Styles & Animations
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bb-bg-main);
+  color: var(--bb-text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: background-color var(--bb-transition-normal), color var(--bb-transition-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--bb-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 140, 0.25);
+  border-radius: var(--bb-radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bb-orange-primary);
+}
+
+/* Container */
+.bb-container {
+  width: 100%;
+  max-width: var(--bb-max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Layout Main Content */
+.bb-main-content {
+  padding-top: var(--bb-nav-height);
+  min-height: calc(100vh - var(--bb-nav-height));
+  padding-bottom: 5rem;
+}
+
+.bb-landing-mode #navbarContainer {
+  display: none;
+}
+
+.bb-landing-mode .bb-main-content {
+  padding-top: 0;
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px var(--bb-orange-glow);
+  }
+  50% {
+    box-shadow: 0 0 24px var(--bb-orange-glow);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--bb-transition-smooth) ease forwards;
+}
+
+.slide-up {
+  animation: slideInUp var(--bb-transition-smooth) ease forwards;
+}
+
+/* Badges - clean without borders */
+.bb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--bb-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.bb-badge-orange {
+  background: var(--bb-orange-subtle);
+  color: var(--bb-orange-primary);
+}
+
+.bb-badge-yellow {
+  background: var(--bb-yellow-subtle);
+  color: var(--bb-yellow-primary);
+}
+
+.bb-badge-glow {
+  background: var(--bb-accent-gradient);
+  color: #090A0E;
+  box-shadow: 0 2px 10px var(--bb-orange-glow);
+}
+
+.bb-badge-dark {
+  background: rgba(14, 16, 22, 0.85);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+}
+[data-theme="light"] .bb-badge-dark {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0C0E14;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}

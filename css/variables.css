@@ -1,0 +1,103 @@
+/**
+ * BiteBox Design Tokens & CSS Variables
+ * Strict Palette: Orange (#FF6B00), Yellow (#FFC200), Black (#090A0E)
+ * Dual-Mode: Seamless Dark & Light theme with borderless cards
+ */
+
+:root {
+  /* Brand Core Colors (Both Modes) */
+  --bb-orange-primary: #FF6B00;
+  --bb-orange-hover: #E55A00;
+  --bb-orange-glow: rgba(255, 107, 0, 0.28);
+  --bb-orange-subtle: rgba(255, 107, 0, 0.12);
+  
+  --bb-yellow-primary: #FFC200;
+  --bb-yellow-hover: #E6AE00;
+  --bb-yellow-glow: rgba(255, 194, 0, 0.32);
+  --bb-yellow-subtle: rgba(255, 194, 0, 0.14);
+
+  --bb-accent-gradient: linear-gradient(135deg, #FF6B00 0%, #FFC200 100%);
+  --bb-accent-gradient-hover: linear-gradient(135deg, #FF7B1A 0%, #FFCE33 100%);
+
+  /* Status Colors */
+  --bb-status-success: #10B981;
+  --bb-status-success-bg: rgba(16, 185, 129, 0.12);
+  --bb-status-warning: #FFC200;
+  --bb-status-warning-bg: rgba(255, 194, 0, 0.12);
+  --bb-status-error: #EF4444;
+  --bb-status-error-bg: rgba(239, 68, 68, 0.12);
+
+  /* Radius Tokens */
+  --bb-radius-xs: 6px;
+  --bb-radius-sm: 10px;
+  --bb-radius-md: 16px;
+  --bb-radius-lg: 22px;
+  --bb-radius-full: 9999px;
+
+  /* Transitions */
+  --bb-transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --bb-transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --bb-transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Dimensions */
+  --bb-nav-height: 72px;
+  --bb-max-width: 1280px;
+
+  /* =========================================================================
+     DARK THEME (Default)
+     ========================================================================= */
+  --bb-bg-main: #090A0E;
+  --bb-bg-surface: #111319;
+  --bb-bg-card: #181A22;
+  --bb-bg-card-hover: #20232E;
+  --bb-bg-input: #151720;
+  --bb-bg-modal: #13151D;
+  --bb-bg-hero: linear-gradient(135deg, #1C1E2A 0%, #111319 100%);
+  
+  /* Text */
+  --bb-text-primary: #FFFFFF;
+  --bb-text-secondary: #9DA3B4;
+  --bb-text-muted: #656C7E;
+  --bb-text-inverse: #090A0E;
+  --bb-text-yellow: #FFD026;
+  --bb-text-orange: #FF7B1A;
+
+  /* Shadow & Depth (No borders needed) */
+  --bb-shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+  --bb-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --bb-shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --bb-shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.5);
+  
+  --bb-border-subtle: transparent;
+  --bb-border-color: transparent;
+}
+
+/* =========================================================================
+   LIGHT THEME
+   ========================================================================= */
+[data-theme="light"] {
+  --bb-bg-main: #F4F5F8;
+  --bb-bg-surface: #FFFFFF;
+  --bb-bg-card: #FFFFFF;
+  --bb-bg-card-hover: #FBFBFC;
+  --bb-bg-input: #EEF0F4;
+  --bb-bg-modal: #FFFFFF;
+  --bb-bg-hero: linear-gradient(135deg, #FFF6EB 0%, #FFFDF7 100%);
+
+  /* Text */
+  --bb-text-primary: #0C0E14;
+  --bb-text-secondary: #4E5568;
+  --bb-text-muted: #878E9F;
+  --bb-text-inverse: #FFFFFF;
+  --bb-text-yellow: #D99B00;
+  --bb-text-orange: #E65A00;
+
+  /* Soft modern elevation without boundaries */
+  --bb-shadow-sm: 0 2px 10px rgba(12, 14, 20, 0.05);
+  --bb-shadow-md: 0 8px 24px rgba(12, 14, 20, 0.07);
+  --bb-shadow-lg: 0 20px 48px rgba(12, 14, 20, 0.12);
+  --bb-shadow-hover: 0 14px 34px rgba(12, 14, 20, 0.1);
+
+  --bb-border-subtle: transparent;
+  --bb-border-color: transparent;
+}
